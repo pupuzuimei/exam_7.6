@@ -2,7 +2,7 @@
 #include<fstream>
 #include <algorithm>
 #include<string>
-#define statistics 6//改变学生人数
+#define statistics 6
 using namespace std;
 struct student{
     string number;
