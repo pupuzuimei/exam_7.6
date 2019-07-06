@@ -2,7 +2,7 @@
 #include<fstream>
 #include <algorithm>
 #include<string>
-#define statistics 6
+#define statistics 7
 using namespace std;
 struct student{
     string number;
