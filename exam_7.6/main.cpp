@@ -5,20 +5,19 @@
 #define statistics 6//改变学生人数
 using namespace std;
 struct student{
-    string number;//学号
-    string name;//姓名
-    string sex;//性别
+    string number;
+    string name;
+    string sex;
     string phone;
-    int age;//年龄
-    double score[7];//成绩
-    double ave;//平均分
+    int age;
+    double score[7];
+    double ave;
 }a[statistics];
 struct people{
-    string referee;//裁判
-    string people;
-    string number1;//学号
-    string name1;//姓名
-    string sex1;//性别
+    string referee;
+    string number1;
+    string name1;
+    string sex1;
     string phone1;
     double score[7];
 };
@@ -36,7 +35,7 @@ int main() {
     ifstream unf("/Users/s20181106278/Desktop/unf.txt");
     if(onf.is_open())
     {
-        for(i=0;i<statistics;++i)//向文件中输入学生信息
+        for(i=0;i<statistics;++i)
         {
             onf>>a[i].number>>a[i].name>>a[i].sex>>a[i].age>>a[i].phone;
         }
@@ -44,7 +43,7 @@ int main() {
     }
     if(unf.is_open())
     {
-        for(i=0;i<statistics;++i)//向文件中输入裁判信息
+        for(i=0;i<statistics;++i)
         {
             unf>>k[i].number1>>k[i].name1>>k[i].sex1>>k[i].phone1;
         }
@@ -56,7 +55,7 @@ int main() {
         {
             enf>>k[j].referee;
         }
-        for(j=0;j<statistics;++j)//输入裁判打的分数n
+        for(j=0;j<statistics;++j)
         {
             for(i=0;i<7;++i)
             {
@@ -66,9 +65,9 @@ int main() {
         }
         enf.close();
     }
-    for(i=0;i<statistics;i++)//冒泡排序
+    for(i=0;i<statistics;i++)
         sort(a[i].score,a[i].score+7);
-    for(j=0;j<statistics;++j)//求平均分
+    for(j=0;j<statistics;++j)
     {
         for(i=1;i<6;++i)
         {
@@ -76,7 +75,7 @@ int main() {
         }
         a[j].ave/=5;
     }
-    sort(a,a+statistics,cmp);//将平均分从大到小排序
+    sort(a,a+statistics,cmp);
     if(inf.is_open())
     {
         for(int i=0;i<statistics;i++)
